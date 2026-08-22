@@ -281,3 +281,18 @@ if(revenu >= 0 && revenu <= 1000000){
 }
 */
 //Question 14 — Système de réservation
+let age = parseInt(prompt("Votre age ?"));
+let chambreDisponible = confirm("Une chambre standard est-elle disponible ?");
+let identiteValide = confirm("Possédez-vous une pièce d'identité valide ?");
+let estVIP = confirm("Êtes-vous client VIP ?");
+let chambreVIPDisponible = confirm("Une chambre VIP est-elle disponible ?");
+
+if(age >= 18 && identiteValide){
+    if(chambreDisponible || (estVIP && chambreVIPDisponible)){
+        alert("réservation accepté")
+    }else{
+        alert("Plus de chambre disponible");
+    }
+}else{
+    alert("age ou identité invalide");
+}
