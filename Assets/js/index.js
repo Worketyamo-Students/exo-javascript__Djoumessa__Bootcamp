@@ -298,6 +298,7 @@ if(age >= 18 && identiteValide){
     alert("age ou identité invalide");
 }
 */
+/*
 //Question 15 — Feu de circulation intelligent
 let couleur = prompt("Couleur du feu :");
 let vitesse = parseInt(prompt("Vitesse actuelle (km/h) :"));
@@ -324,3 +325,12 @@ if (couleur === "vert") {
 }
 
 console.log("Action à effectuer : " + action);
+*/
+//Partie IV — Conditions avancées
+//Question 16 — Opérateur ternaire
+let age = parseInt(prompt("Votre age : "));
+console.log(age);
+//statut = ( age < 21)?"Mineur":"Majeur";
+statut = (age < 21)?"Mineur":(age < 60 ?"Majeur":"Senior");
+console.log("Vous etez : " + statut);
+
