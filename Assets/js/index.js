@@ -30,6 +30,7 @@ if( (age >= 21 && salary >= 200000 && hasStableJob) || (yearsAsClient >= 5) ){
 }else{
     alert(" Non éligible au crédit ")
 }*/
+
 /*
 //Question 8 — Système de sécurité
 
@@ -46,6 +47,28 @@ if((isNewAccount && unknownDevice === "appareil inconnu") || (attempts >=5) || (
     alert("la connexion n'est pas considérée comme suspecte ");
 }
 */
+
 //Question 9 — Validation d'un formulaire
 
+let username;
+let email;
+let password;
+let age;
+username = prompt("Nom d'utilisateur:");
+email = prompt("Votre mail: ");
+password = prompt("Mot de passe :");
+age = parseInt(prompt("Votre age:"));
+
+if(username.length < 3){
+    console.log("Le nom d'utlisateur doit contenir aumoins 3 caractères");
+}else if(email.length <= 0){
+    console.log("Votre email est vide");
+}else if(password.length < 8){
+    console.log("Le mot de passe doit contenir aumoins 8 caractères");
+}else if(age < 13){
+    console.log("l'âge doit être  supérieur ou égal à 13 ans.")
+
+}else{
+    alert("Le formulaire est valide");
+}
    
