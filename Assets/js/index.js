@@ -47,7 +47,7 @@ if((isNewAccount && unknownDevice === "appareil inconnu") || (attempts >=5) || (
     alert("la connexion n'est pas considérée comme suspecte ");
 }
 */
-
+/*
 //Question 9 — Validation d'un formulaire
 
 let username;
@@ -71,4 +71,37 @@ if(username.length < 3){
 }else{
     alert("Le formulaire est valide");
 }
-   
+*/
+/*
+//Question 10 — Livraison
+let amount=parseInt(prompt("Montant des courses:"));
+let isPremium = false;
+let zone=prompt("Lieu de la livraison:");
+let coutLivraison ;
+if(zone === "hors-zone"){
+    alert("hors zone livraion impossible")
+}else if( amount > 50000 || isPremium){
+    coutLivraison = 0;
+    alert("Le prix de la livraison est: " + coutLivraison +" FCFA");
+}else{
+     coutLivraison = 2500;
+    alert("Le prix de la livraison est: " + coutLivraison +" FCFA");
+}
+*/
+//Question 11 — Résultat d'un étudiant
+let moyenneGenerale = parseFloat(prompt("Moyenne Générale:"));
+let moyenneMath = parseFloat(prompt("Moyenne en Math:"));
+let moyenneInfo = parseFloat(prompt("Moyenne en Info:"));
+let absences = parseInt(prompt("Nombre d'abscence:"));
+
+if(absences <= 20){
+    if(moyenneGenerale >= 10 && moyenneMath >= 8 && moyenneInfo >= 10){
+        alert("VALIDE")
+    }else if(moyenneGenerale >= 9 && moyenneGenerale < 10){
+        alert("RATTRAPAGE");
+    }else{
+        alert("ECHEC");
+    }
+}else{
+    alert("EXCLU");
+}
