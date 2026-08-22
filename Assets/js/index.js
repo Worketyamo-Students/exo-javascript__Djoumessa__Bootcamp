@@ -326,6 +326,7 @@ if (couleur === "vert") {
 
 console.log("Action à effectuer : " + action);
 */
+/*
 //Partie IV — Conditions avancées
 //Question 16 — Opérateur ternaire
 let age = parseInt(prompt("Votre age : "));
@@ -333,4 +334,15 @@ console.log(age);
 //statut = ( age < 21)?"Mineur":"Majeur";
 statut = (age < 21)?"Mineur":(age < 60 ?"Majeur":"Senior");
 console.log("Vous etez : " + statut);
+*/
+//Question 17 — Analyse de valeurs truthy/falsy
+let valeurs = [0, 1, "", "Bonjour", null, undefined, false, true, [], {}, NaN];
 
+for (let i = 0; i < valeurs.length; i++) {
+    let v = valeurs[i];
+    if (v) {
+        console.log(v + " → truthy");
+    } else {
+        console.log(v + " → falsy");
+    }
+}
