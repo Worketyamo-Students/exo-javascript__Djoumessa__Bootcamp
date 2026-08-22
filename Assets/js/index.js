@@ -30,7 +30,22 @@ if( (age >= 21 && salary >= 200000 && hasStableJob) || (yearsAsClient >= 5) ){
 }else{
     alert(" Non éligible au crédit ")
 }*/
+/*
 //Question 8 — Système de sécurité
 
+let isNewAccount = false;
+let unknownDevice;
+let attempts;
+let isBlocked = false;
+unknownDevice=prompt("D'ou provient la connexion ?: ");
+attempts = prompt("Nombre de tentative de connexion: ");
+
+if((isNewAccount && unknownDevice === "appareil inconnu") || (attempts >=5) || (isBlocked) ){
+    alert(" la connexion est considérée comme suspecte ");
+}else{
+    alert("la connexion n'est pas considérée comme suspecte ");
+}
+*/
+//Question 9 — Validation d'un formulaire
 
    
