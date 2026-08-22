@@ -1,4 +1,5 @@
-// Question 6 — Accès à une plateforme
+/* 
+//Question 6 — Accès à une plateforme
 let isConnected;
 let isActive;
 let isAdmin;
@@ -11,3 +12,25 @@ if((isActive === true && isActive == true) || (isAdmin === true)){
 }else{
     alert(" accès non autorisé.");
 }
+*/
+/*
+
+//Question 7 — Éligibilité à un crédit
+let age;
+let salary;
+let hasStableJob = true;
+let yearsAsClient;
+
+age = parseInt(prompt("Quel est votre Age: "));
+salary = parseInt(prompt("Quel est le montant de votre salaire: "));
+yearsAsClient = parseInt(prompt("Depuis combien d'année etez-vous client: "));
+
+if( (age >= 21 && salary >= 200000 && hasStableJob) || (yearsAsClient >= 5) ){
+     alert(" Éligible au crédit");
+}else{
+    alert(" Non éligible au crédit ")
+}*/
+//Question 8 — Système de sécurité
+
+
+   
