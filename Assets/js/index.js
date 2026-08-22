@@ -280,6 +280,7 @@ if(revenu >= 0 && revenu <= 1000000){
     console.log("erreur sur les revenu");
 }
 */
+/*
 //Question 14 — Système de réservation
 let age = parseInt(prompt("Votre age ?"));
 let chambreDisponible = confirm("Une chambre standard est-elle disponible ?");
@@ -296,3 +297,30 @@ if(age >= 18 && identiteValide){
 }else{
     alert("age ou identité invalide");
 }
+*/
+//Question 15 — Feu de circulation intelligent
+let couleur = prompt("Couleur du feu :");
+let vitesse = parseInt(prompt("Vitesse actuelle (km/h) :"));
+let distance = parseInt(prompt("Distance au feu (mètres) :"));
+
+let action;
+
+if (couleur === "vert") {
+    if (vitesse <= 50) {
+        action = "Continuer";
+    } else {
+        action = "Ralentir";
+    }
+} else if (couleur === "orange") {
+    action = "Ralentir";
+} else if (couleur === "rouge") {
+    if (distance >= 20) {
+        action = "S'arrêter";
+    } else {
+        action = "Arrêt d'urgence";
+    }
+} else {
+    action = "Erreur : couleur inconnue";
+}
+
+console.log("Action à effectuer : " + action);
