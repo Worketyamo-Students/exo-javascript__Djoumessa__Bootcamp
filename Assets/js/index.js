@@ -88,6 +88,7 @@ if(zone === "hors-zone"){
     alert("Le prix de la livraison est: " + coutLivraison +" FCFA");
 }
 */
+/*
 //Question 11 — Résultat d'un étudiant
 let moyenneGenerale = parseFloat(prompt("Moyenne Générale:"));
 let moyenneMath = parseFloat(prompt("Moyenne en Math:"));
@@ -105,3 +106,178 @@ if(absences <= 20){
 }else{
     alert("EXCLU");
 }
+*/
+/*
+//Question 12 — Système de péage
+let montant_final;
+let reduc;
+let vehicule = prompt("Type du véhicule");
+let vehiculeElectrique = confirm("Est ce que le véhicule est électrique:");
+let vehiculeUrgence = confirm("Est ce que c'est un véhicule d'urgence:");
+//let vehiculeInconnu = confirm("Est ce que le véhicule est inconnu:");
+if(vehicule === "Moto"){
+    if(vehiculeElectrique){
+        reduc = 500*0.02;
+        montant_final = 500-reduc;
+        alert("le montant final a payer est :" + montant_final);
+
+    }else if(vehiculeUrgence){
+        montant_final = 0;
+        alert("le montant final a payer est :" + montant_final);
+    }else{
+        montant_final = 500;
+        alert("le montant final a payer est :" + montant_final);
+    }
+}else if(vehicule === "Voiture"){ 
+    if(vehiculeElectrique){
+        reduc = 1000*0.02;
+        montant_final = 1000-reduc;
+        alert("le montant final a payer est :" + montant_final);
+
+    }else if(vehiculeUrgence){
+        montant_final = 0;
+        alert("le montant final a payer est :" + montant_final);
+    }else{
+        montant_final = 1000;
+        alert("le montant final a payer est :" + montant_final);
+    }
+}else if(vehicule === "Camionnette"){ 
+    if(vehiculeElectrique){
+        reduc = 2000*0.02;
+        montant_final = 2000-reduc;
+        alert("le montant final a payer est :" + montant_final);
+
+    }else if(vehiculeUrgence){
+        montant_final = 0;
+        alert("le montant final a payer est :" + montant_final);
+    }else{
+        montant_final = 2000;
+        alert("le montant final a payer est :" + montant_final);
+    }
+}else if(vehicule === "Camion"){ 
+    if(vehiculeElectrique){
+        reduc = 5000*0.02;
+        montant_final = 5000-reduc;
+        alert("le montant final a payer est :" + montant_final);
+
+    }else if(vehiculeUrgence){
+        montant_final = 0;
+        alert("le montant final a payer est :" + montant_final);
+    }else{
+        montant_final = 5000;
+        alert("le montant final a payer est :" + montant_final);
+    }
+}else{
+    alert("type de véhicule inconnu: véhicule invalide.");
+}         
+*/
+/*
+// Question 13 — Calculateur d'impôt
+let revenu = parseInt(prompt("Revenu annuel:"));
+let nbrePersonneCharge = parseInt(prompt("Nombre de personne a charge: "));
+let taux;
+let reducion;
+let montantImpot = revenu*taux;
+let revenuApresImpot= revenu-(montantImpot-reducion);
+
+if(revenu >= 0 && revenu <= 1000000){
+    if(nbrePersonneCharge >= 3){
+        taux = 0;
+        montantImpot = revenu*taux;
+        reducion = montantImpot*0.05;
+        revenuApresImpot= revenu-(montantImpot-reducion);
+        console.log("Revenu: " + revenu + " FCFA " +
+                    "\n Taux appliqué : " + taux + "%" +
+                    "\n Réduction éventuelle : " + reducion + " FCFA " +
+                    "\n Montant de l'impôt : " + montantImpot + " FCFA " +
+                    "\n Revenu après impôt : " + revenuApresImpot + " FCFA ")
+    }else{
+        taux = 0;
+        reducion = 0;
+        montantImpot = revenu*taux;
+        revenuApresImpot= revenu-(montantImpot-reducion);
+        console.log("Revenu: " + revenu + " FCFA " +
+                    "\n Taux appliqué : " + taux + "%" +
+                    "\n Réduction éventuelle : " + reducion + " FCFA " +
+                    "\n Montant de l'impôt : " + montantImpot + " FCFA " +
+                    "\n Revenu après impôt : " + revenuApresImpot + " FCFA ")
+
+
+    }
+}else if(revenu >= 1000001 && revenu <= 3000000){
+    if(nbrePersonneCharge >= 3){
+        taux = 0.1;
+        montantImpot = revenu*taux;
+        reducion = montantImpot*0.05;
+        revenuApresImpot= revenu-(montantImpot-reducion);
+        console.log("Revenu: " + revenu + " FCFA " +
+                    "\n Taux appliqué : " + taux + "%" +
+                    "\n Réduction éventuelle : " + reducion + " FCFA " +
+                    "\n Montant de l'impôt : " + montantImpot + " FCFA " +
+                    "\n Revenu après impôt : " + revenuApresImpot + " FCFA ")
+    }else{
+        taux = 0.1;
+        reducion = 0;
+        montantImpot = revenu*taux;
+        revenuApresImpot= revenu-(montantImpot-reducion);
+        console.log("Revenu: " + revenu + " FCFA " +
+                    "\n Taux appliqué : " + taux + "%" +
+                    "\n Réduction éventuelle : " + reducion + " FCFA " +
+                    "\n Montant de l'impôt : " + montantImpot + " FCFA " +
+                    "\n Revenu après impôt : " + revenuApresImpot + " FCFA ")
+
+
+    }
+}else if(revenu >= 3000001 && revenu <= 6000000){
+    if(nbrePersonneCharge >= 3){
+        taux = 0.2;
+        montantImpot = revenu*taux;
+        reducion = montantImpot*0.05;
+        revenuApresImpot= revenu-(montantImpot-reducion);
+        console.log("Revenu: " + revenu + " FCFA " +
+                    "\n Taux appliqué : " + taux + "%" +
+                    "\n Réduction éventuelle : " + reducion + " FCFA " +
+                    "\n Montant de l'impôt : " + montantImpot + " FCFA " +
+                    "\n Revenu après impôt : " + revenuApresImpot + " FCFA ")
+    }else{
+        taux = 0.2;
+        reducion = 0;
+        montantImpot = revenu*taux;
+        revenuApresImpot= revenu-(montantImpot-reducion);
+        console.log("Revenu: " + revenu + " FCFA " +
+                    "\n Taux appliqué : " + taux + "%" +
+                    "\n Réduction éventuelle : " + reducion + " FCFA " +
+                    "\n Montant de l'impôt : " + montantImpot + " FCFA " +
+                    "\n Revenu après impôt : " + revenuApresImpot + " FCFA ")
+
+
+    }
+}else if(revenu >= 6000001){
+    if(nbrePersonneCharge >= 3){
+        taux = 0.3;
+        montantImpot = revenu*taux;
+        reducion = montantImpot*0.05;
+        revenuApresImpot= revenu-(montantImpot-reducion);
+        console.log("Revenu: " + revenu + " FCFA " +
+                    "\n Taux appliqué : " + taux + "%" +
+                    "\n Réduction éventuelle : " + reducion + " FCFA " +
+                    "\n Montant de l'impôt : " + montantImpot + " FCFA " +
+                    "\n Revenu après impôt : " + revenuApresImpot + " FCFA ")
+    }else{
+        taux = 0.3;
+        reducion = 0;
+        montantImpot = revenu*taux;
+        revenuApresImpot= revenu-(montantImpot-reducion);
+        console.log("Revenu: " + revenu + " FCFA " +
+                    "\n Taux appliqué : " + taux + "%" +
+                    "\n Réduction éventuelle : " + reducion + " FCFA " +
+                    "\n Montant de l'impôt : " + montantImpot + " FCFA " +
+                    "\n Revenu après impôt : " + revenuApresImpot + " FCFA ")
+
+
+    }
+}else{
+    console.log("erreur sur les revenu");
+}
+*/
+//Question 14 — Système de réservation
