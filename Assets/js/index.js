@@ -348,6 +348,7 @@ for (let i = 0; i < valeurs.length; i++) {
     }
 }
 */
+/*
 // Question 18 — Système de permissions
 let role = prompt("Votre role:");
 let isAuthenticated = confirm(" l'utilisateur est-il authentifié ?");
@@ -367,4 +368,40 @@ if( isAuthenticated && isAccountActive ){
     }
 }else{
     alert("accès refusé");
+}
+*/
+//Question 19 — Détecteur de triangle
+
+let a = parseFloat(prompt("valeur 1:"));
+let b = parseFloat(prompt("valeur 2:"));
+let c = parseFloat(prompt("valeur 3:"));
+
+if( a > 0 && b > 0 && c > 0 && a+b){
+
+    if(a + b > c || a + c > b || b + c > a){
+
+        if( a === b && b === c ){
+
+            alert("le triangle est équilatéral");
+
+            }else if( a**2 === b**2 + c**2 || b**2 === a**2 + c**2 || c**2 === a**2 + b**2){
+
+            alert("le triangle est rectangle");
+
+            }else if( a === b || a === c || b === c ){
+
+            alert("le triangle est isocèle");
+
+        }else{
+
+        alert(" le triangle est scalène");
+        }
+
+    }else{
+        alert("ce n'est pas un triangle");
+    }
+
+}else{
+
+    alert("Valeurs negative ou nulle");
 }
