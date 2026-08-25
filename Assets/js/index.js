@@ -335,6 +335,7 @@ console.log(age);
 statut = (age < 21)?"Mineur":(age < 60 ?"Majeur":"Senior");
 console.log("Vous etez : " + statut);
 */
+/*
 //Question 17 — Analyse de valeurs truthy/falsy
 let valeurs = [0, 1, "", "Bonjour", null, undefined, false, true, [], {}, NaN];
 
@@ -345,4 +346,25 @@ for (let i = 0; i < valeurs.length; i++) {
     } else {
         console.log(v + " → falsy");
     }
+}
+*/
+// Question 18 — Système de permissions
+let role = prompt("Votre role:");
+let isAuthenticated = confirm(" l'utilisateur est-il authentifié ?");
+let isAccountActive = confirm(" le compte est-il activé ?");
+
+if( isAuthenticated && isAccountActive ){
+    if(role === "admin"){
+        alert("accès complet");
+    }else if(role === "professor"){
+        alert("accès aux cours et aux étudiants");
+    }else if(role === "student"){
+        alert(" accès uniquement à ses cours");
+    }else if( role === "guest"){
+        alert("accès limité ");
+    }else{
+        alert("ERREUR SUR LE ROLE RESSAYER");
+    }
+}else{
+    alert("accès refusé");
 }
