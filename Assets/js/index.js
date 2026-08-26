@@ -370,6 +370,7 @@ if( isAuthenticated && isAccountActive ){
     alert("accès refusé");
 }
 */
+/*
 //Question 19 — Détecteur de triangle
 
 let a = parseFloat(prompt("valeur 1:"));
@@ -404,4 +405,151 @@ if( a > 0 && b > 0 && c > 0 && a+b){
 }else{
 
     alert("Valeurs negative ou nulle");
+}
+*/
+/*
+//Question 20 — Mini-système bancaire
+let solde = parseInt(prompt("Solde avant opération"));
+let montant;
+let typeOperation = prompt("Entrer le type d'opération:");
+let isBlocked = confirm("Le compte est-il bloqué");
+let isVerified = confirm("Le compte a t-il été vérifier");
+
+if(isBlocked == false){
+    if(isVerified){
+        if( typeOperation === "depot"){
+            montant = parseInt(prompt("Montant du dépôt:"));
+            if(montant < 0){
+                alert("montant negatif");
+            }else{
+                let transaction = 100;
+                let newsolde = solde - montant - transaction;
+                let statut =(solde !== newsolde)?"ENCOURS":"TERMINE";
+                console.log("Type d'opération: " + typeOperation +
+                    "\nMontant : " + montant + " FCFA " +
+                    "\nAncien solde : " + solde + " FCFA " +
+                    "\nNouveau solde : " + newsolde + " FCFA " +
+                    "\nStatut de l'opération : " + statut
+                )
+            }
+        }else if( typeOperation === "retrait"){
+            montant = parseInt(prompt("montant du retrait"));
+            if(solde < montant){
+                alert("solde insuffisant");
+            }else{
+                let transaction = 50;
+                let newsolde =solde - montant - transaction;
+                let statut = (solde !== newsolde)?"ENCOURS":"TERMINE";
+                console.log("Type d'opération: " + typeOperation +
+                    "\nMontant : " + montant + " FCFA " +
+                    "\nAncien solde : " + solde + " FCFA " +
+                    "\nNouveau solde : " + newsolde + " FCFA " +
+                    "\nStatut de l'opération : " + statut
+                )
+            }
+        }else if( typeOperation === "virement" ){
+            montant = parseInt(prompt("montant du virement"));
+            if(montant > 500000){
+                if(isVerified){
+                let transaction = 150;
+                let newsolde =solde - montant - transaction;
+                let statut = (solde !== newsolde)?"ENCOURS":"TERMINE";
+                console.log("Type d'opération: " + typeOperation +
+                    "\nMontant : " + montant + " FCFA " +
+                    "\nAncien solde : " + solde + " FCFA " +
+                    "\nNouveau solde : " + newsolde + " FCFA " +
+                    "\nStatut de l'opération : " + statut
+                )
+
+                }else{
+                    alert("echec de la verification")
+                }
+            }else{
+                let transaction = 150;
+                let newsolde =solde -(montant - transaction;
+                let statut = (solde !== newsolde)?"ENCOURS":"TERMINE";
+                console.log("Type d'opération: " + typeOperation +
+                    "\nMontant : " + montant + " FCFA " +
+                    "\nAncien solde : " + solde + " FCFA " +
+                    "\nNouveau solde : " + newsolde + " FCFA " +
+                    "\nStatut de l'opération : " + statut
+                )
+            }
+        }else{
+            alert(" opération inconnue");
+        }
+
+
+    }else{
+        alert("echec de la vérification du compte ");
+    }
+
+}else{
+    alert("compte bloqué  vous ne pouvez effectuer aucune opération ");
+}
+*/
+let solde = parseInt(prompt("Solde avant opération:"));
+let montant;
+let typeOperation = prompt("Entrer le type d'opération:");
+let isBlocked = confirm("Le compte est-il bloqué ?");
+let isVerified = confirm("Le compte a-t-il été vérifié ?");
+
+if (isBlocked) {
+    alert("Compte bloqué, vous ne pouvez effectuer aucune opération.");
+} else {
+    if (!isVerified) {
+        alert("Échec de la vérification du compte.");
+    } else {
+        if (typeOperation === "depot") {
+            montant = parseInt(prompt("Montant du dépôt:"));
+            if (montant <= 0) {
+                alert("Montant négatif ou nul, opération refusée.");
+            } else {
+                let frais = 100;
+                let newsolde = solde + montant - frais;
+                let statut = "TERMINE";
+                console.log("Type d'opération: " + typeOperation +
+                    "\nMontant : " + montant + " FCFA " +
+                    "\nAncien solde : " + solde + " FCFA " +
+                    "\nNouveau solde : " + newsolde + " FCFA " +
+                    "\nStatut de l'opération : " + statut);
+            }
+
+        } else if (typeOperation === "retrait") {
+            montant = parseInt(prompt("Montant du retrait:"));
+            if (montant > solde) {
+                alert("Solde insuffisant.");
+            } else {
+                let frais = 50;
+                let newsolde = solde - montant - frais;
+                let statut = "TERMINE";
+                console.log("Type d'opération: " + typeOperation +
+                    "\nMontant : " + montant + " FCFA " +
+                    "\nAncien solde : " + solde + " FCFA " +
+                    "\nNouveau solde : " + newsolde + " FCFA " +
+                    "\nStatut de l'opération : " + statut);
+            }
+
+        } else if (typeOperation === "virement") {
+            montant = parseInt(prompt("Montant du virement:"));
+            let frais = 150;
+
+            if (montant > 500000 && !isVerified) {
+                alert("Échec : vérification supplémentaire requise pour ce virement.");
+            } else if (montant > solde + frais) {
+                alert("Solde insuffisant pour ce virement.");
+            } else {
+                let newsolde = solde - montant - frais;
+                let statut = "TERMINE";
+                console.log("Type d'opération: " + typeOperation +
+                    "\nMontant : " + montant + " FCFA " +
+                    "\nAncien solde : " + solde + " FCFA " +
+                    "\nNouveau solde : " + newsolde + " FCFA " +
+                    "\nStatut de l'opération : " + statut);
+            }
+
+        } else {
+            alert("Opération inconnue.");
+        }
+    }
 }
